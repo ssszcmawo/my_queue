@@ -16,6 +16,7 @@ bool isFull(Queue *q) {
 void enqueue(Queue *q, int data) {
     if (isFull(q)) {
         printf("Queue is full!\n");
+        return -1;
     }
 
     q->data[q->rear] = data;
@@ -25,6 +26,7 @@ void enqueue(Queue *q, int data) {
 void dequeue(Queue *q) {
     if (isEmpty(q)) {
         printf("Queue is empty!\n");
+        return -1;
     }
 
     q->front++;
@@ -33,6 +35,7 @@ void dequeue(Queue *q) {
 int peek(Queue *q) {
     if (isEmpty(q)) {
         printf("Queue is empty!\n");
+        return -1
     }
     return q->data[q->front + 1];
 }
@@ -40,6 +43,7 @@ int peek(Queue *q) {
 void printQueue(Queue *q) {
     if (isEmpty(q)) {
         printf("Queue is empty!\n");
+        return -1;
     }
 
     for (int i = q->front + 1; i < q->rear; i++) {
